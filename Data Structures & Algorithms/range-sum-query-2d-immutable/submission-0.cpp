@@ -1,0 +1,31 @@
+class NumMatrix {
+public:
+
+    vector<vector<int>> mat;
+
+    NumMatrix(vector<vector<int>>& matrix) {
+        mat = matrix;
+    }
+
+    int sumMatrix(int row1, int col1, int row2, int col2, 
+    vector<vector<int>>& matrix){
+        int sum = 0;
+        for(int i = row1 ; i <= row2 ; i++){
+            for(int j = col1 ; j <= col2 ; j++){
+                sum += matrix[i][j];
+            }
+        }
+        return sum;
+    }
+
+    int sumRegion(int row1, int col1, int row2, int col2) {
+        int ans = sumMatrix(row1, col1, row2, col2, mat);
+        return ans;
+    }
+};
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix* obj = new NumMatrix(matrix);
+ * int param_1 = obj->sumRegion(row1,col1,row2,col2);
+ */
